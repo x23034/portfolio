@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     hamburgerMenu.addEventListener('click', () => {
-        fetch('menu.html')
+        hamburgerMenu.classList.toggle('open');  // ハンバーガーメニューの状態を切り替え
+        fetch('https://x23034.github.io/portfolio/menu.html')
             .then(response => response.text())
             .then(html => {
                 if (!document.querySelector('.menu')) {
@@ -11,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const menu = document.querySelector('.menu');
                     const style = document.createElement('link');
                     style.rel = 'stylesheet';
-                    style.href = 'menu.css';
+                    style.href = 'https://x23034.github.io/portfolio/menu.css';
                     document.head.appendChild(style);
 
                     setTimeout(() => {
