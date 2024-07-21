@@ -77,8 +77,9 @@ main {
     padding: 100px 20px 40px;
 }
 
+/* 各セクション間の間隔を100px以上に設定 */
 section {
-    margin-bottom: 60px;
+    margin-bottom: 120px; /* 120pxに設定して、十分な間隔を確保 */
 }
 
 h1, h2 {
@@ -103,10 +104,11 @@ h1, h2 {
     flex: 1;
 }
 
+/* works-gridを縦並びに変更 */
 .works-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    display: flex;
+    flex-direction: column; /* 縦並びに変更 */
+    gap: 60px; /* work-item間の間隔を60pxに設定（50px以上） */
 }
 
 .work-item {
