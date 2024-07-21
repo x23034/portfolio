@@ -1,9 +1,10 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: white;
-    color: rgb(0, 0, 0);
+    color: black;
+    line-height: 1.6;
 }
 
 header {
@@ -19,10 +20,10 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 60px;  /* 幅は変更なし */
-    height: 60px;  /* 高さを幅と同じに設定 */
+    width: 60px;
+    height: 60px;
     background-color: black;
-    padding: 15px 12px;  /* 上下のパディングを増やし、左右を少し減らす */
+    padding: 15px 12px;
 }
 
 .bar {
@@ -39,10 +40,104 @@ header {
     background-color: black;
 }
 
-main {
-    padding: 60px 20px 20px;
+.menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    background-color: black;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
 }
 
-h1 {
+.menu.open {
+    right: 0;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 100px;
+}
+
+.menu ul li {
+    padding: 15px 30px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px 40px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h1, h2 {
     color: black;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profile-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.work-item {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .profile-image {
+        width: 200px;
+        height: 200px;
+    }
 }

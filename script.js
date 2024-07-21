@@ -1,27 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const body = document.body;
+    const menu = document.querySelector('.menu');
+    const menuLinks = document.querySelectorAll('.menu a');
 
     hamburgerMenu.addEventListener('click', () => {
-        hamburgerMenu.classList.toggle('open');  // ハンバーガーメニューの状態を切り替え
-        fetch('https://x23034.github.io/portfolio/menu.html')
-            .then(response => response.text())
-            .then(html => {
-                if (!document.querySelector('.menu')) {
-                    body.insertAdjacentHTML('beforeend', html);
-                    const menu = document.querySelector('.menu');
-                    const style = document.createElement('link');
-                    style.rel = 'stylesheet';
-                    style.href = 'https://x23034.github.io/portfolio/menu.css';
-                    document.head.appendChild(style);
+        hamburgerMenu.classList.toggle('open');
+        menu.classList.toggle('open');
+    });
 
-                    setTimeout(() => {
-                        menu.classList.add('open');
-                    }, 10);
-                } else {
-                    const menu = document.querySelector('.menu');
-                    menu.classList.toggle('open');
-                }
-            });
+    menuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            hamburgerMenu.classList.remove('open');
+            menu.classList.remove('open');
+
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        });
     });
 });
