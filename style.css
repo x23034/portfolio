@@ -19,24 +19,24 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 60px;  /* 2倍のサイズに変更 */
-    height: 42px;  /* 2倍のサイズに変更 */
-    background-color: black;  /* 黒い背景を追加 */
-    padding: 10px;  /* 内側の余白を追加 */
+    width: 60px;  /* 幅は変更なし */
+    height: 60px;  /* 高さを幅と同じに設定 */
+    background-color: black;
+    padding: 15px 12px;  /* 上下のパディングを増やし、左右を少し減らす */
 }
 
 .bar {
     width: 100%;
-    height: 6px;  /* バーの高さも2倍に */
-    background-color: white;  /* バーの色を白に変更 */
+    height: 6px;
+    background-color: white;
 }
 
 .hamburger-menu.open {
-    background-color: white;  /* メニューが開いているときは背景を白に */
+    background-color: white;
 }
 
 .hamburger-menu.open .bar {
-    background-color: black;  /* メニューが開いているときはバーを黒に */
+    background-color: black;
 }
 
 main {
