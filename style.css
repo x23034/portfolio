@@ -77,12 +77,17 @@ main {
     padding: 100px 20px 40px;
 }
 
-/* 各セクション間の間隔を100px以上に設定 */
 section {
-    margin-bottom: 120px; /* 120pxに設定して、十分な間隔を確保 */
+    margin-bottom: 120px;
 }
 
 h1, h2 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+#home h1 {
+    font-family: 'Noto Serif JP', serif;
     color: black;
     margin-bottom: 20px;
 }
@@ -98,17 +103,39 @@ h1, h2 {
     height: 300px;
     object-fit: cover;
     border-radius: 50%;
+    position: relative;
+    z-index: 1;
+}
+
+.profile-image::before,
+.profile-image::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid black;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.profile-image::before {
+    transform: rotate(5deg);
+}
+
+.profile-image::after {
+    transform: rotate(-5deg);
 }
 
 .about-text {
     flex: 1;
 }
 
-/* works-gridを縦並びに変更 */
 .works-grid {
     display: flex;
-    flex-direction: column; /* 縦並びに変更 */
-    gap: 60px; /* work-item間の間隔を60pxに設定（50px以上） */
+    flex-direction: column;
+    gap: 60px;
 }
 
 .work-item {
@@ -141,5 +168,13 @@ footer {
     .profile-image {
         width: 200px;
         height: 200px;
+    }
+
+    .profile-image::before,
+    .profile-image::after {
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
     }
 }
