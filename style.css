@@ -104,7 +104,7 @@ h1, h2 {
     align-items: center;
     gap: 40px;
 }
-
+/*
 .profile-image {
     width: 300px;
     height: 300px;
@@ -134,7 +134,7 @@ h1, h2 {
 .profile-image::after {
     transform: rotate(-5deg);
 }
-
+*/
 .about-text {
     flex: 1;
 }
