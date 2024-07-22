@@ -1,3 +1,4 @@
+/* 基本スタイル */
 body, html {
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@ body, html {
     line-height: 1.6;
 }
 
+/* ヘッダースタイル */
 header {
     position: fixed;
     top: 0;
@@ -15,6 +17,7 @@ header {
     z-index: 1000;
 }
 
+/* ハンバーガーメニューのスタイル */
 .hamburger-menu {
     cursor: pointer;
     display: flex;
@@ -40,6 +43,7 @@ header {
     background-color: black;
 }
 
+/* メニューのスタイル */
 .menu {
     position: fixed;
     top: 0;
@@ -63,6 +67,7 @@ header {
 
 .menu ul li {
     padding: 15px 30px;
+    position: relative;
 }
 
 .menu ul li a {
@@ -71,6 +76,7 @@ header {
     font-size: 18px;
 }
 
+/* メインコンテンツのスタイル */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -87,10 +93,12 @@ h1, h2 {
 }
 
 #home h1 {
+    font-family: 'Noto Serif JP', serif;
     color: black;
     margin-bottom: 20px;
 }
 
+/* About セクションのスタイル */
 .about-content {
     display: flex;
     align-items: center;
@@ -131,6 +139,7 @@ h1, h2 {
     flex: 1;
 }
 
+/* Works セクションのスタイル */
 .works-grid {
     display: flex;
     flex-direction: column;
@@ -144,13 +153,18 @@ h1, h2 {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.work-item img {
-    width: 100%;
-    height: auto;
+/* Work項目内の画像スタイリング */
+.work-item .work-image {
+    width: 60%; /* 画像の幅を60%に変更 */
+    height: auto; /* 高さを自動調整して縦横比を維持 */
     border-radius: 4px;
     margin-bottom: 15px;
+    display: block; /* ブロック要素として表示 */
+    margin-left: auto; /* 左右中央揃え */
+    margin-right: auto;
 }
 
+/* フッタースタイル */
 footer {
     background-color: black;
     color: white;
@@ -159,6 +173,44 @@ footer {
     margin-top: 40px;
 }
 
+/* サブメニューのスタイル */
+.submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.submenu li {
+    padding: 5px 0;
+}
+
+.submenu li a {
+    font-size: 16px;
+}
+
+.submenu.open {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* アニメーション */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* レスポンシブデザイン */
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
@@ -175,5 +227,17 @@ footer {
         left: -8px;
         right: -8px;
         bottom: -8px;
+    }
+
+    .submenu {
+        position: static;
+        background-color: transparent;
+        padding: 0 0 0 20px;
+        width: auto;
+    }
+
+    /* スマートフォン表示時の画像サイズ調整 */
+    .work-item .work-image {
+        width: 80%; /* モバイル表示時は少し大きめに */
     }
 }
