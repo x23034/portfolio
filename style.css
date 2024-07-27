@@ -93,7 +93,6 @@ h1, h2 {
 }
 
 #home h1 {
-    
     color: black;
     margin-bottom: 20px;
 }
@@ -104,37 +103,7 @@ h1, h2 {
     align-items: center;
     gap: 40px;
 }
-/*
-.profile-image {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 50%;
-    position: relative;
-    z-index: 1;
-}
 
-.profile-image::before,
-.profile-image::after {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    border: 2px solid black;
-    border-radius: 50%;
-    z-index: -1;
-}
-
-.profile-image::before {
-    transform: rotate(5deg);
-}
-
-.profile-image::after {
-    transform: rotate(-5deg);
-}
-*/
 .about-text {
     flex: 1;
 }
@@ -155,12 +124,12 @@ h1, h2 {
 
 /* Work項目内の画像スタイリング */
 .work-item .work-image {
-    width: 60%; /* 画像の幅を60%に変更 */
-    height: auto; /* 高さを自動調整して縦横比を維持 */
+    width: 60%;
+    height: auto;
     border-radius: 4px;
     margin-bottom: 15px;
-    display: block; /* ブロック要素として表示 */
-    margin-left: auto; /* 左右中央揃え */
+    display: block;
+    margin-left: auto;
     margin-right: auto;
 }
 
@@ -212,8 +181,31 @@ footer {
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
+    /* ヘッダー */
+    header {
+        padding: 10px;
+    }
+
+    /* ハンバーガーメニュー */
+    .hamburger-menu {
+        width: 40px;
+        height: 40px;
+        padding: 10px 8px;
+    }
+
+    .bar {
+        height: 4px;
+    }
+
+    /* メインコンテンツ */
+    main {
+        padding: 60px 15px 20px;
+    }
+
+    /* About セクション */
     .about-content {
         flex-direction: column;
+        gap: 20px;
     }
 
     .profile-image {
@@ -221,23 +213,42 @@ footer {
         height: 200px;
     }
 
-    .profile-image::before,
-    .profile-image::after {
-        top: -8px;
-        left: -8px;
-        right: -8px;
-        bottom: -8px;
+    /* Works セクション */
+    .works-grid {
+        gap: 30px;
     }
 
+    .work-item {
+        padding: 15px;
+    }
+
+    .work-item .work-image {
+        width: 100%;
+    }
+
+    /* メニュー */
+    .menu {
+        width: 100%;
+        right: -100%;
+    }
+
+    .menu ul {
+        margin-top: 60px;
+    }
+
+    .menu ul li {
+        padding: 10px 20px;
+    }
+
+    .menu ul li a {
+        font-size: 16px;
+    }
+
+    /* サブメニュー */
     .submenu {
         position: static;
         background-color: transparent;
         padding: 0 0 0 20px;
         width: auto;
-    }
-
-    /* スマートフォン表示時の画像サイズ調整 */
-    .work-item .work-image {
-        width: 80%; /* モバイル表示時は少し大きめに */
     }
 }
