@@ -179,41 +179,35 @@ footer {
     }
 }
 
-/* レスポンシブデザイン */
+/* モバイル表示用のメディアクエリ */
 @media (max-width: 768px) {
-    /* ヘッダー */
-    header {
-        padding: 10px;
-    }
-
-    /* ハンバーガーメニュー */
-    .hamburger-menu {
-        width: 40px;
-        height: 40px;
-        padding: 10px 8px;
-    }
-
-    .bar {
-        height: 4px;
-    }
-
-    /* メインコンテンツ */
+    /* メインコンテンツの調整 */
     main {
-        padding: 60px 15px 20px;
+        padding: 80px 15px 20px;
     }
 
-    /* About セクション */
+    /* セクション間の余白調整 */
+    section {
+        margin-bottom: 60px;
+    }
+
+    /* About セクションの調整 */
     .about-content {
         flex-direction: column;
-        gap: 20px;
+        align-items: center;
     }
 
     .profile-image {
-        width: 200px;
-        height: 200px;
+        width: 60%;
+        height: auto;
+        max-width: 200px;
     }
 
-    /* Works セクション */
+    .about-text {
+        text-align: center;
+    }
+
+    /* Works セクションの調整 */
     .works-grid {
         gap: 30px;
     }
@@ -224,31 +218,31 @@ footer {
 
     .work-item .work-image {
         width: 100%;
+        max-width: 300px;
     }
 
-    /* メニュー */
+    /* メニューの調整 */
     .menu {
         width: 100%;
         right: -100%;
+    }
+
+    .menu.open {
+        right: 0;
     }
 
     .menu ul {
         margin-top: 60px;
     }
 
-    .menu ul li {
-        padding: 10px 20px;
+    /* ハンバーガーメニューの調整 */
+    .hamburger-menu {
+        width: 40px;
+        height: 40px;
+        padding: 10px 8px;
     }
 
-    .menu ul li a {
-        font-size: 16px;
-    }
-
-    /* サブメニュー */
-    .submenu {
-        position: static;
-        background-color: transparent;
-        padding: 0 0 0 20px;
-        width: auto;
+    .bar {
+        height: 4px;
     }
 }
