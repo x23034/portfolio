@@ -96,36 +96,41 @@ h1, h2 {
 #home h1 {
     color: black;
     margin-bottom: 20px;
-    /* 変更: 画面中央いっぱいに表示しつつ、他の要素と被らないようにする */
     text-align: center;
-    font-size: 5vw; /* ビューポートの幅に応じて文字サイズを調整 */
-    padding: 100px 0; /* 上下にパディングを追加して、他の要素と被らないようにする */
+    font-size: 5vw;
+    padding: 100px 0;
 }
 
 /* About セクションのスタイル */
 .about-content {
     display: flex;
-    align-items: flex-start; /* 変更: 上揃えに設定 */
+    align-items: flex-start;
     gap: 40px;
 }
 
 /* .about-textのスタイルを修正 */
 .about-text {
-    /* 削除: text-align: center; */
-    /* 追加: 左揃えにする */
     text-align: left;
 }
 
-/* 追加: about-textクラスのpタグを左揃えにする */
 .about-text p {
     text-align: left;
+}
+
+/* 追加: about-content内のimgタグのスタイル */
+.about-content img {
+    border-radius: 50%; /* 画像を丸く縁取る */
+    border: 3px solid #000; /* 黒い枠線を追加 */
+    width: 30%; /* PC表示時の大きさを半分に */
+    height: auto;
+    max-width: 200px; /* 最大幅を設定 */
 }
 
 /* SNSアイコンのスタイル */
 .sns-icons {
     margin-top: 20px;
     display: flex;
-    justify-content: flex-start; /* 変更: 左揃えに設定 */
+    justify-content: flex-start;
     gap: 20px;
 }
 
@@ -139,7 +144,7 @@ h1, h2 {
 }
 
 .sns-icons a:hover {
-    filter: brightness(1.2); /* マウスホバー時に明るくする */
+    filter: brightness(1.2);
 }
 
 .instagram-icon {
@@ -235,8 +240,8 @@ footer {
 
     /* #home h1のモバイル調整 */
     #home h1 {
-        font-size: 10vw; /* モバイル表示時は文字サイズを大きく */
-        padding: 50px 0; /* モバイル表示時はパディングを小さく */
+        font-size: 10vw;
+        padding: 50px 0;
     }
 
     /* About セクションの調整 */
@@ -245,9 +250,9 @@ footer {
         align-items: center;
     }
 
-    .profile-image {
+    /* 追加: モバイル表示時のabout-content内のimgタグのスタイル */
+    .about-content img {
         width: 60%;
-        height: auto;
         max-width: 200px;
     }
 
