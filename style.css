@@ -115,8 +115,7 @@ h1, h2 {
 
 /* .about-textのスタイルを修正 */
 .about-text {
-    /*flex: 1;*/
-    display: block; /* 追加: 確実に表示されるようにする */
+    text-align: center;
 }
 
 /* SNSアイコンのスタイル */
