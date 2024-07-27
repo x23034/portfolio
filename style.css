@@ -96,33 +96,36 @@ h1, h2 {
 #home h1 {
     color: black;
     margin-bottom: 20px;
-    /* 追加: 画面中央いっぱいに表示 */
+    /* 変更: 画面中央いっぱいに表示しつつ、他の要素と被らないようにする */
     text-align: center;
     font-size: 5vw; /* ビューポートの幅に応じて文字サイズを調整 */
-    /*position: absolute;
-    top: 50%;
-    left: 50%;*/
-    transform: translate(-50%, -50%);
-    width: 100%;
+    padding: 100px 0; /* 上下にパディングを追加して、他の要素と被らないようにする */
 }
 
 /* About セクションのスタイル */
 .about-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* 変更: 上揃えに設定 */
     gap: 40px;
 }
 
 /* .about-textのスタイルを修正 */
 .about-text {
-    text-align: center;
+    /* 削除: text-align: center; */
+    /* 追加: 左揃えにする */
+    text-align: left;
+}
+
+/* 追加: about-textクラスのpタグを左揃えにする */
+.about-text p {
+    text-align: left;
 }
 
 /* SNSアイコンのスタイル */
 .sns-icons {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start; /* 変更: 左揃えに設定 */
     gap: 20px;
 }
 
@@ -233,6 +236,7 @@ footer {
     /* #home h1のモバイル調整 */
     #home h1 {
         font-size: 10vw; /* モバイル表示時は文字サイズを大きく */
+        padding: 50px 0; /* モバイル表示時はパディングを小さく */
     }
 
     /* About セクションの調整 */
