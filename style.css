@@ -8,6 +8,12 @@ body, html {
     line-height: 1.6;
 }
 
+#home
+{
+    padding-bottom: 200px;
+    padding-top: 50px;
+}
+
 /* ヘッダースタイル */
 header {
     position: fixed;
