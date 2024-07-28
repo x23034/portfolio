@@ -8,16 +8,6 @@ body, html {
     line-height: 1.6;
 }
 
-#home
-{
-    padding-bottom: 200px;
-    padding-top: 50px;
-}
-#about
-{
-    padding-bottom: 200px;
-}
-
 /* ヘッダースタイル */
 header {
     position: fixed;
@@ -112,10 +102,20 @@ h1, h2 {
 }
 
 /* About セクションのスタイル */
+#about {
+    /* 追加: #aboutセクションを中央寄せにする */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .about-content {
     display: flex;
     align-items: flex-start;
     gap: 40px;
+    /* 追加: コンテンツの最大幅を設定して中央寄せ */
+    max-width: 800px;
+    width: 100%;
 }
 
 /* .about-textのスタイルを修正 */
@@ -127,13 +127,13 @@ h1, h2 {
     text-align: left;
 }
 
-/* 追加: about-content内のimgタグのスタイル */
+/* 修正: about-content内のimgタグのスタイル */
 .about-content img {
-    border-radius: 50%; /* 画像を丸く縁取る */
+    border-radius: 50%; /* 画像を真円に縁取る */
     border: 3px solid #000; /* 黒い枠線を追加 */
-    width: 30%; /* PC表示時の大きさを半分に */
-    height: auto;
-    max-width: 200px; /* 最大幅を設定 */
+    width: 200px; /* 固定幅を設定 */
+    height: 200px; /* 高さも同じ値に設定して真円を保証 */
+    object-fit: cover; /* 画像のアスペクト比を保持しつつ、指定したサイズに収める */
 }
 
 /* SNSアイコンのスタイル */
@@ -155,6 +155,11 @@ h1, h2 {
 
 .sns-icons a:hover {
     filter: brightness(1.2);
+}
+
+/* 修正: InstagramとTwitterのアイコンサイズを統一 */
+.instagram-icon, .twitter-icon {
+    background-size: 40px 40px; /* アイコンサイズを40x40pxに統一 */
 }
 
 .instagram-icon {
@@ -260,10 +265,10 @@ footer {
         align-items: center;
     }
 
-    /* 追加: モバイル表示時のabout-content内のimgタグのスタイル */
+    /* 修正: モバイル表示時のabout-content内のimgタグのスタイル */
     .about-content img {
-        width: 60%;
-        max-width: 200px;
+        width: 150px; /* モバイル表示時は少し小さく */
+        height: 150px;
     }
 
     .about-text {
