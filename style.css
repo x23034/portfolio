@@ -14,6 +14,11 @@ body, html {
     padding-top: 50px;
 }
 
+#about
+{
+    padding-bottom: 100px;
+}
+
 /* ヘッダースタイル */
 header {
     position: fixed;
